@@ -1,0 +1,50 @@
+body {
+    background: #444;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#taiji {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #000000 0%, #000000 100%);  /*通过渐变设置上白下黑*/
+    position: relative;
+    margin: 100px auto;
+    animation-name: spin;
+    animation-duration: 2s;                     /*设置旋转一周所用时间*/
+    animation-timing-function: linear;          /*设置为线性匀速旋转*/
+    animation-iteration-count: infinite;        /*设置旋转次数*/
+}
+
+#taiji::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 40px solid black;
+    position: absolute;
+    top: 25%;
+    left: 0px;
+}
+
+#taiji::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    border: 40px solid white;
+    position: absolute;
+    top: 25%;
+    right: 0px;
+}
